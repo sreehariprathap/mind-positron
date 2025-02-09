@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/appButton"
 import AppLayout from "@/layouts/appLayout"
 
 export default function Home() {
