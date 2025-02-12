@@ -1,9 +1,11 @@
 "use client";
-import AppLayout from "@/layouts/appLayout";
+import SplashLayout from "@/layouts/splashLayout";
 import  IconButton  from "@/components/ui/iconButton";
 import React from "react";
 import { Form, Input, Button } from "@heroui/react";
 import { Divider } from "@heroui/react";
+import {  Image } from "@heroui/react";
+
 
 const LoginForm = () => {
   const [submitted, setSubmitted] = React.useState(null);
@@ -30,6 +32,7 @@ const LoginForm = () => {
         name="email"
         placeholder="Enter your email"
         type="email"
+        className="label:text-white"
       />
       <Input
         isRequired
@@ -39,6 +42,7 @@ const LoginForm = () => {
         name="password"
         placeholder="Enter your password"
         type="password"
+        className="text-white"
       />
       <Button type="submit" variant="bordered">
         Login
@@ -53,12 +57,13 @@ const LoginForm = () => {
 };
 export default function Home() {
   return (
-    // <AppLayout>
-    <div className="flex justify-between items-center">
-      <img
-        src="/brain.jpg"
-        alt="Logo"
-        className="w-[50vw] min-h-screen rounded-sm object-cover"
+    <SplashLayout>
+    <div className="flex flex-col items-center py-10 gap-10 justify-between bg-primaryDark">
+    <Image
+        removeWrapper
+        alt="App Logo"
+        className="z-0 w-96 object-cover"
+        src='/‘MINDPOSITRON’-1.png'
       />
       <div className="flex flex-col w-full items-center justify-center gap-5">
         <LoginForm />
@@ -73,6 +78,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-    // </AppLayout>
+    </SplashLayout>
   );
 }

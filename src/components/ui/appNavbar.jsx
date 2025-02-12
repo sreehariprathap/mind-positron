@@ -14,7 +14,7 @@ import {
 
 export const AppLogo = () => {
   return (
-    <div className="p-4 text-foreground text-4xl font-light">mind<span className="font-bold">positron</span></div>
+    <img src="/‘MINDPOSITRON’-2.png" alt="app logo" className="w-52" />
   );
 };
 
@@ -46,19 +46,19 @@ export default function AppNavbar() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 text-white" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+      <NavbarContent className="hidden sm:flex gap-4 text-primaryColor" justify="center">
+        <NavbarItem isActive>
+          <Link href="/classes">
+            Classes
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link color="foreground" href="#">
+        <NavbarItem >
+          <Link href="#">
             Upcoming
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link href="#">
             Contact
           </Link>
         </NavbarItem>
