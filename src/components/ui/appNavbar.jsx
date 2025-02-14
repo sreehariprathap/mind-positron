@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   Navbar,
@@ -11,15 +11,15 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+import { useAuth } from "@/providers/AuthProvider";
 
 export const AppLogo = () => {
-  return (
-    <img src="/‘MINDPOSITRON’-2.png" alt="app logo" className="w-52" />
-  );
+  return <img src="/‘MINDPOSITRON’-2.png" alt="app logo" className="w-52" />;
 };
 
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { user, logout } = useAuth();
 
   const menuItems = [
     "Profile",
@@ -35,7 +35,10 @@ export default function AppNavbar() {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-background text-foreground">
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-background text-foreground"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -46,21 +49,18 @@ export default function AppNavbar() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4 text-primaryColor" justify="center">
+      <NavbarContent
+        className="hidden sm:flex gap-4 text-primaryColor"
+        justify="center"
+      >
         <NavbarItem isActive>
-          <Link href="/classes">
-            Classes
-          </Link>
-        </NavbarItem>
-        <NavbarItem >
-          <Link href="#">
-            Upcoming
-          </Link>
+          <Link href="/classes">Classes</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="#">
-            Contact
-          </Link>
+          <Link href="#">Upcoming</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link href="#">Contact</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
@@ -79,7 +79,11 @@ export default function AppNavbar() {
             <Link
               className="w-full"
               color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
               }
               href="#"
               size="lg"
@@ -92,4 +96,3 @@ export default function AppNavbar() {
     </Navbar>
   );
 }
-

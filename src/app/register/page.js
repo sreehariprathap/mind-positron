@@ -1,8 +1,5 @@
-import AppLayout from "@/layouts/appLayout"
+import AuthPage from "@/pages/AuthPage";
 
-export default function Home() {
-  return (
-    <AppLayout>
-    </AppLayout>
-  );
+export default function RegisterPage() {
+  return <AuthPage type="register" />;
 }

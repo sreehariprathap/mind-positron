@@ -1,8 +1,8 @@
-import SplashCursor from "@/components/styles/SplashCursor";
+// import SplashCursor from "@/components/styles/SplashCursor";
 
 const SplashLayout = ({ children }) => {
   return (
-    <div className="w-full h-full bg-primaryDark">
+    <div className="w-full h-full ">
       {/* <SplashCursor /> */}
       {children}
     </div>
